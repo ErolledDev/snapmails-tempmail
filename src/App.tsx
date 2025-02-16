@@ -7,7 +7,7 @@ import { ContactPage } from './pages/ContactPage';
 import { ApiPage } from './pages/ApiPage';
 import { FaqPage } from './pages/FaqPage';
 import { TermsPage } from './pages/TermsPage';
-import { PrivacyPage } from './pages/PrivacyPage';
+import { PrivacyPage } from './pages/Privacy';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 function App() {
