@@ -1,8 +1,14 @@
 import React from 'react';
-import { Shield, Clock, Lock, RefreshCw, Mail, Zap } from 'lucide-react';
+import { Shield, Clock, Lock, RefreshCw, Mail, Zap, Edit2, Globe } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 export default function Features() {
   const features = [
+    {
+      icon: <Edit2 className="w-6 h-6 text-blue-500" />,
+      title: "Customizable Email",
+      description: "Unlike other services, we let you customize your temporary email address anytime you want."
+    },
     {
       icon: <Shield className="w-6 h-6 text-blue-500" />,
       title: "Privacy Protection",
@@ -32,39 +38,66 @@ export default function Features() {
       icon: <Zap className="w-6 h-6 text-blue-500" />,
       title: "Fast & Reliable",
       description: "High-performance infrastructure ensures your temporary email service is always available."
+    },
+    {
+      icon: <Globe className="w-6 h-6 text-blue-500" />,
+      title: "Multiple Domains",
+      description: "Choose from different email domains to suit your needs and preferences."
     }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4">Features</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Discover all the powerful features that make TempMail Pro the best choice for temporary email services.
-        </p>
-      </div>
+    <>
+      <Helmet>
+        <title>Features - Temp Mail - Free Disposable Temporary Email | Spam-Free Temp Mail</title>
+        <meta name="description" content="Disposable email addresses instantly. Protect your privacy with SnapMails' free temporary email service. No registration, instant inbox access, and automatic deletion for maximum security. Perfect for avoiding spam, testing services, and protecting your real email." />
+        <meta property="og:title" content="Features - Temp Mail - Free Disposable Temporary Email | Spam-Free Temp Mail" />
+        <meta property="og:description" content="Disposable email addresses instantly. Protect your privacy with SnapMails' free temporary email service. No registration, instant inbox access, and automatic deletion for maximum security. Perfect for avoiding spam, testing services, and protecting your real email." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://snapmails.xyz/features" />
+        <link rel="canonical" href="https://snapmails.xyz/features" />
+      </Helmet>
+      
+      <main className="max-w-7xl mx-auto px-4 py-16" role="main">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
+            Powerful Features
+          </h1>
+          <p className="text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Discover what makes SnapMails the most versatile temporary email service available.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((feature, index) => (
-          <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-              {feature.icon}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" role="list">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-br hover:from-blue-50 hover:to-white"
+              role="listitem"
+            >
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
+                {feature.icon}
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-600 text-sm">{feature.description}</p>
             </div>
-            <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-            <p className="text-gray-600">{feature.description}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="mt-16 bg-blue-50 rounded-2xl p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Ready to get started?</h2>
-        <p className="text-gray-600 mb-8">
-          Try TempMail Pro now and experience the best temporary email service available.
-        </p>
-        <a href="/" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-          Get Started
-        </a>
-      </div>
-    </div>
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-center">
+          <h2 className="text-2xl font-bold mb-4 text-white">Ready to get started?</h2>
+          <p className="text-blue-100 mb-8">
+            Try SnapMails now and experience the best temporary email service available.
+          </p>
+          <a
+            href="/"
+            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors"
+            aria-label="Get started with SnapMails"
+          >
+            Get Started
+          </a>
+        </div>
+      </main>
+    </>
   );
 }
